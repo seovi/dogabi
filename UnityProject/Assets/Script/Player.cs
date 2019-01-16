@@ -10,24 +10,28 @@ public class Player : MonoBehaviour {
     public float maxHeight;
     public float minHeight;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, targetPos, speed  * Time.deltaTime);
+        Debug.Log(transform.position);
 
 		if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight)
         {
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-            //transform.position = targetPos;
+            if (targetPos.y > maxHeight)
+                targetPos.y = maxHeight;
+
         } else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
         {
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
-            //transform.position = targetPos;
+            if (targetPos.y < minHeight)
+                targetPos.y = minHeight;
         }
 	}
 }
