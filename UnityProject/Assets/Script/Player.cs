@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour {
 
     private Vector2 targetPos;
@@ -10,14 +10,19 @@ public class Player : MonoBehaviour {
     public float maxHeight;
     public float minHeight;
 
+    public int health = 3;
+
     // Use this for initialization
     void Start () {
-		
+        targetPos = transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (health <= 0)
+        {
+            Debug.Log("U Die");
+        }
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed  * Time.deltaTime);
         Debug.Log(transform.position);
 
