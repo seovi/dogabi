@@ -141,8 +141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 586b8e865cf31aa45917f153efa929ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 6534618643836994240, guid: 09b48f13018cb7d4b84f7d58bc8da17d, type: 3}
-  startTimeBtwSpawn: 1.6
+  EnemyPatterns:
+  - {fileID: 5600119177422844766, guid: 84b8873168346b84e9ed52ddf7a810ec, type: 3}
+  - {fileID: 5122816361623293041, guid: 82388f84ff1ef944eb1c8844be438752, type: 3}
+  - {fileID: 6406823110700534822, guid: 1cbf5ef0c8f063741be00b97596b32a5, type: 3}
+  startTimeBtwSpawn: 2.6
   decreaseTime: 0.05
   minTime: 0.65
 --- !u!4 &175162887
@@ -339,7 +342,7 @@ MonoBehaviour:
   speed: 100
   maxHeight: 3
   minHeight: -3
-  health: 3
+  health: 5
 --- !u!58 &1486075510
 CircleCollider2D:
   m_ObjectHideFlags: 0

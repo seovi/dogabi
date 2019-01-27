@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject Enemy;
+    public GameObject[] EnemyPatterns;
 
     private float timeBtwSpawn;
     public float startTimeBtwSpawn;
@@ -22,7 +22,8 @@ public class Spawner : MonoBehaviour
     {
         if (timeBtwSpawn <= 0)
         {
-            Instantiate(Enemy, transform.position, Quaternion.Euler(0f, 0f, 270f));
+            int rand = Random.Range(0, EnemyPatterns.Length);
+            Instantiate(EnemyPatterns[rand], transform.position, Quaternion.Euler(0f, 0f, 270f));
             timeBtwSpawn = startTimeBtwSpawn;
             if (startTimeBtwSpawn > minTime)
             {
