@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class Player : MonoBehaviour {
 
     private Vector2 targetPos;
@@ -22,6 +23,7 @@ public class Player : MonoBehaviour {
         if (health <= 0)
         {
             Debug.Log("U Die");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed  * Time.deltaTime);
         Debug.Log(transform.position);
