@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
     public float minHeight;
 
     public int health = 3;
+    public GameObject effect;
 
     // Use this for initialization
     void Start () {
@@ -30,12 +31,14 @@ public class Player : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight)
         {
+            Instantiate(effect, transform.position, Quaternion.identity);
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
             if (targetPos.y > maxHeight)
                 targetPos.y = maxHeight;
 
         } else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
         {
+            Instantiate(effect, transform.position, Quaternion.identity);
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
             if (targetPos.y < minHeight)
                 targetPos.y = minHeight;

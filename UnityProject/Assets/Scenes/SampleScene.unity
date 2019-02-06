@@ -343,6 +343,7 @@ MonoBehaviour:
   maxHeight: 3
   minHeight: -3
   health: 5
+  effect: {fileID: 0}
 --- !u!58 &1486075510
 CircleCollider2D:
   m_ObjectHideFlags: 0

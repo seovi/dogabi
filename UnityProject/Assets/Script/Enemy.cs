@@ -6,6 +6,9 @@ public class Enemy : MonoBehaviour
 {
     public int damage = 1;
     public float speed;
+
+    public GameObject effect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Instantiate(effect, transform.position, Quaternion.identity);
             collision.GetComponent<Player>().health -= 1;
             Debug.Log(collision.GetComponent<Player>().health);
             Destroy(gameObject);
