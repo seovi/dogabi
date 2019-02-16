@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public float speed;
 
     public GameObject effect;
+    public GameObject sound;
 
     // Start is called before the first frame update
     void Start()
@@ -25,10 +26,12 @@ public class Enemy : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Instantiate(sound);
             Instantiate(effect, transform.position, Quaternion.identity);
             collision.GetComponent<Player>().health -= 1;
             Debug.Log(collision.GetComponent<Player>().health);
-            Destroy(gameObject);
+            Destroy(sound);
+            Destroy(gameObject);            
         }
     }
 }

@@ -11,10 +11,13 @@ public class Spawner : MonoBehaviour
     public float decreaseTime;
     public float minTime = 0.65f;
 
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Vector2 position = new Vector2(-5, 0);
+        Instantiate(player, position, Quaternion.Euler(0f, 0f, 270f));
     }
 
     // Update is called once per frame
