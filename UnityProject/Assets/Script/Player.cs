@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
@@ -15,6 +16,8 @@ public class Player : MonoBehaviour {
     public GameObject effect;
     public GameObject moveSound;
 
+    public Text healthDisplay;
+
     // Use this for initialization
     void Start () {
         targetPos = transform.position;
@@ -22,6 +25,12 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (healthDisplay != null)
+        {
+            healthDisplay.text = health.ToString();
+        }
+
         if (health <= 0)
         {
             Debug.Log("U Die");
