@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 3
+  speed: 7
   effect: {fileID: 319657467922855237, guid: f2e7fffdbffa2994783dc299f670d3e1, type: 3}
   sound: {fileID: 7700982629954282370, guid: e9da8d1f4239fc9468ac54b4f2c21d66, type: 3}
 --- !u!58 &9191814329991535721
